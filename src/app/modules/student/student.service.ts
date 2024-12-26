@@ -17,8 +17,7 @@ const getAllStudentsFromDB = async (query: Record<string, unknown>) => {
   if (query?.searchTerm) {
     searchTerm = query?.searchTerm as string; 
   }
-
-  
+ 
  // HOW OUR FORMAT SHOULD BE FOR PARTIAL MATCH  : 
   { email: { $regex : query.searchTerm , $options: i}}
   { presentAddress: { $regex : query.searchTerm , $options: i}}
